@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CS 4810 Final Project</title>
+  </head>
+  <body>
+    <script src="src/lib/perlin.js"></script>
+    <script src="src/lib/three.min.js"></script>
+    <script src="src/lib/TrackballControls.js"></script>
+    <script src="src/terrainGen.js"></script>
+    <script src="src/main.js"></script>
+  </body>
+</html>
+
+
+<!-- Things that still are (probably) broken:
+
+Normals seem incorrect in some cases
+
+Operations sometimes result in artifacts:
+
+I've seen some weird black triangles after some union operations
+
+the LEAF - LEAF case for the diff operation seems to calculate jagged edges when used with the surface of the perlin heightmap. 
+Could be something wrong with the hermite data for the noise function since I haven't seen it happen with other types of volume data.
+
+  -->
+
+
+
+
+
+
+
+<!-- 
+Possible improvements:
+
+Try using other methods to find the intersection point for different density functions. Interpolation, binary search both could come in handy
+
+Raycast from mouse to place brush
+
+Rotate brush
+
+Intersection operation
+
+Replacement operation (like painting)
+
+Operations on octrees with different sized leaves (allows operations on simplified octrees)
+
+Buffered geometry for fast csg operations
+
+Write a shader to blend between materials, use material textures
+
+Chunk loading, seam stitching (allows for LOD with far away chunks)
+
+Top-down lighting
+
+Collision detection -->
