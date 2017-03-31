@@ -95,8 +95,11 @@ By default, the operation is delete (i.e. cut the brush shape out of the terrain
 The number keys change the operation type
 
 1 - delete
+
 2 - create dirt
+
 3 - create rock
+
 4 - create grass
 
 
