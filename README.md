@@ -1,6 +1,6 @@
-#CS4810 HW5 - las4vc
 
-##Assignment Specification
+
+Assignment Specification
 -------------------------------------------------------------------------------
 Avaiable points:
 
