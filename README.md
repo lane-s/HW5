@@ -33,12 +33,13 @@ Avaiable points:
 	  + camera/terrain collision prevention (10%)
 	      +10% if caves can be entered but walls not penetrated
 	  + walking+jumping with gravity (15%)
-Completed:
+	  
+	Completed:
 
-Dual Contouring (see note in sources)
-Concavity support
-Terrain brush - Multiple materials, 2 shapes, add/remove
-3D Noise - cave digging
+		Dual Contouring (see note in sources)
+		Concavity support
+		Terrain brush - Multiple materials, 2 shapes, add/remove
+		3D Noise - cave digging
 -----------------------------------------------------------------------------------
 
 ## Usage:
