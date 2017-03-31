@@ -33,7 +33,6 @@ Avaiable points:
 	  + camera/terrain collision prevention (10%)
 	      +10% if caves can be entered but walls not penetrated
 	  + walking+jumping with gravity (15%)
------------------------------------------------------------------------------------
 Completed:
 
 Dual Contouring (see note in sources)
