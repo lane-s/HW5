@@ -76,11 +76,11 @@ Y - Move brush in +Y direction
 
 B - Move brush in -Y direction
 
-# In sphere mode:
+### In sphere mode:
 + to increase sphere radius
 - to decrease sphere radius
 
-# In box mode:
+### In box mode:
 + scale box in +Y direction
 - scale box in -Y direction
 I - scale box in +Z direction
@@ -88,7 +88,7 @@ M - scale box in -Z direction
 J - scale box in -X direction
 K - scale box in +X direction
 
-# Enter - performs selected operation
+### Enter - performs selected operation
 
 By default, the operation is delete (i.e. cut the brush shape out of the terrain)
 
@@ -100,7 +100,7 @@ The number keys change the operation type
 4 - create grass
 
 
-# Sources: 
+## Sources: 
 
 perlin.js - https://github.com/josephg/noisejs
 
