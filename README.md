@@ -76,11 +76,11 @@ Y - Move brush in +Y direction
 
 B - Move brush in -Y direction
 
-##In sphere mode:
+In sphere mode:
 + to increase sphere radius
 - to decrease sphere radius
 
-##In box mode:
+In box mode:
 + scale box in +Y direction
 - scale box in -Y direction
 I - scale box in +Z direction
@@ -99,7 +99,6 @@ The number keys change the operation type
 3 - create rock
 4 - create grass
 
------------------------------------------------------------------------------------
 
 ##Sources: 
 
