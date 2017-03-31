@@ -1,4 +1,6 @@
-CS4810 HW5 - las4vc
+#CS4810 HW5 - las4vc
+
+##Assignment Specification
 -------------------------------------------------------------------------------
 Avaiable points:
 
@@ -39,9 +41,10 @@ Concavity support
 Terrain brush - Multiple materials, 2 shapes, add/remove
 3D Noise - cave digging
 -----------------------------------------------------------------------------------
-Usage:
 
-Open up index.html on some web browser - I mostly tested with Google Chrome, but I checked Firefox and it works too
+## Usage:
+
+Open up index.html on some web browser - tested with Google Chrome
 
 A 64x64x64 chunk of terrain will be generated
 
@@ -49,9 +52,7 @@ A 64x64x64 chunk of terrain will be generated
 
 3D Simplex noise is used to dig cave-like shapes into the terrain
 
-Press Z to toggle a wireframe view of the terrain mesh
-
-Movement Controls:
+## Camera Controls:
 
 Hold down the left mouse button and move the mouse to orbit the terrain.
 
@@ -59,34 +60,48 @@ Hold the left mouse button and the S key and move the move to zoom in and out
 
 Hold down the right mouse button and move the mouse to pan
 
-Brush Controls:
+Z - toggles wireframe view
+
+## Brush Controls:
 
 The translucent sphere that you see can be used to edit the terrain
 
-The brush shape can be toggled between a sphere and a box by pressing T. 
+T - toggle brush shape between sphere and box
 
-For brush movement, Numpad 4 and Numpad 6 move the brush on the x axis. Numpad 8 and 2 move the brush on the z axis. Numpad 9 and 3 move it on the y axis.
+G - Move brush in -X direction
 
-In sphere mode:
-Numpad + and Numpad - increase and decrease the radius of the sphere
+H - Move brush in +X direction
 
-In box mode:
-Numpad + and - control the y dimension of the box. I,M controls the z dimension, J,L controls the x dimension
+Y - Move brush in +Y direction
 
-Press numpad enter to perform an operation on the terrain with the brush.
+B - Move brush in -Y direction
+
+#In sphere mode:
++ to increase sphere radius
+- to decrease sphere radius
+
+#In box mode:
++ scale box in +Y direction
+- scale box in -Y direction
+I - scale box in +Z direction
+M - scale box in -Z direction
+J - scale box in -X direction
+K - scale box in +X direction
+
+#Enter - performs selected operation
 
 By default, the operation is delete (i.e. cut the brush shape out of the terrain)
 
 The number keys change the operation type
 
-1- delete
-2- create dirt
-3- create rock
-4. create grass
+1 - delete
+2 - create dirt
+3 - create rock
+4 - create grass
 
 -----------------------------------------------------------------------------------
 
-Sources: 
+#Sources: 
 
 perlin.js - https://github.com/josephg/noisejs
 
