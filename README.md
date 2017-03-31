@@ -77,12 +77,12 @@ Y - Move brush in +Y direction
 B - Move brush in -Y direction
 
 ### In sphere mode:
-+ to increase sphere radius
-- to decrease sphere radius
+O - to increase sphere radius
+L - to decrease sphere radius
 
 ### In box mode:
-+ scale box in +Y direction
-- scale box in -Y direction
+O - scale box in +Y direction
+L - scale box in -Y direction
 I - scale box in +Z direction
 M - scale box in -Z direction
 J - scale box in -X direction
