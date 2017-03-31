@@ -33,7 +33,7 @@ init();
 animate();
 simulate();
 
-
+/* Get a THREE.js Geometry object from the root node of a world */
 function getTerrainGeometry(terrainNode, simplificationThreshold){
 
 	var terrain = terrainNode.world;
@@ -65,12 +65,10 @@ function getTerrainGeometry(terrainNode, simplificationThreshold){
 		face.normal.normalize();
 
 		face.materialIndex = terrain.materialBuffer[faceCount];
-		//console.log("Face ("+a+", "+b+", "+c);
+
 		terrainGeometry.faces.push(face);
 		faceCount++;
 	}
-	//terrainGeometry.computeVertexNormals();
-	//terrainGeometry.computeFaceNormals();
 
 	return terrainGeometry;
 }
@@ -94,7 +92,6 @@ function init(){
 	controls = new THREE.TrackballControls(camera,renderer.domElement);
 	controls.target.set(32,16,32);
 
-	//camera.projectionMatrix = new THREE.Matrix4().makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
 	camera.position.y = 100;
 
 	noise.seed(Math.random());
@@ -174,7 +171,6 @@ function init(){
 	materials[MATERIAL_DIRT] = new THREE.MeshLambertMaterial({color: 0x6d3f17});
 	materials[MATERIAL_ROCK] = new THREE.MeshLambertMaterial({color: 0x7e838c});
 	materials[MATERIAL_GRASS] = new THREE.MeshLambertMaterial({color: 0x186813});
-	//materials[0].wireframe = true; materials[1].wireframe = true;
 
 	var material = new THREE.MultiMaterial(materials);
 
@@ -200,7 +196,7 @@ function init(){
 	directionalLight.position.set( 0, 1, 0 );
 	scene.add( directionalLight );
 
-	var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+	var light = new THREE.AmbientLight( 0x404040 );
 	scene.add( light );
 
 	var brushMaterial = new THREE.MeshBasicMaterial({color: 0xdddd00, transparent: true, opacity: 0.7});
@@ -221,8 +217,7 @@ var useWireframe = false;
 function onKeyDown(event){
 	var keyCode = event.which;
 
-	console.log(keyCode);
-	if(keyCode == 107){//Radius/Y increase
+	if(keyCode == 79){//Radius/Y increase
 		if(brushShape === "sphere"){
 			sphereBrushRadius += brushSizeDelta;
 			sphereBrush.scale.set(sphereBrushRadius,sphereBrushRadius,sphereBrushRadius);
@@ -231,7 +226,7 @@ function onKeyDown(event){
 			cubeBrush.scale.set(cubeBrushDim.x,cubeBrushDim.y,cubeBrushDim.z);
 		}
 
-	}else if(keyCode == 109){//Radius/Y decrease
+	}else if(keyCode == 76){//Radius/Y decrease
 		if(brushShape === "sphere"){
 			sphereBrushRadius -= brushSizeDelta;
 			if(sphereBrushRadius < 1){
@@ -250,7 +245,7 @@ function onKeyDown(event){
 		terrainMesh.material.materials[1].wireframe = useWireframe;
 		terrainMesh.material.materials[2].wireframe = useWireframe;
 		terrainMesh.material.materials[3].wireframe = useWireframe;
-	}else if(keyCode == 84){
+	}else if(keyCode == 84){//Toggle brush shape
 		if(brushShape === "sphere"){
 			brushShape = "box";
 			cubeBrush.visible = true;
@@ -279,20 +274,20 @@ function onKeyDown(event){
 				cubeBrushDim.set(1,cubeBrushDim.y,cubeBrushDim.z);
 			}
 			cubeBrush.scale.set(cubeBrushDim.x,cubeBrushDim.y,cubeBrushDim.z);
-	}else if(keyCode == 76){//x+
+	}else if(keyCode == 75){//x+
 			cubeBrushDim.set(cubeBrushDim.x+brushSizeDelta,cubeBrushDim.y,cubeBrushDim.z);
 			cubeBrush.scale.set(cubeBrushDim.x,cubeBrushDim.y,cubeBrushDim.z);
-	}else if(keyCode == 38){//pos z+
+	}else if(keyCode == 89){//pos z+
 		brushLocation.set(brushLocation.x,brushLocation.y,brushLocation.z+brushPositionDelta);
-	}else if(keyCode == 40){//pos z-
+	}else if(keyCode == 66){//pos z-
 		brushLocation.set(brushLocation.x,brushLocation.y,brushLocation.z-brushPositionDelta);
-	}else if(keyCode == 39){//pos x+
+	}else if(keyCode == 72){//pos x+
 		brushLocation.set(brushLocation.x+brushPositionDelta,brushLocation.y,brushLocation.z);
-	}else if(keyCode == 37){//pos x-
+	}else if(keyCode == 71){//pos x-
 		brushLocation.set(brushLocation.x-brushPositionDelta,brushLocation.y,brushLocation.z);
-	}else if(keyCode == 33){//pos y+
+	}else if(keyCode == 85){//pos y+
 		brushLocation.set(brushLocation.x,brushLocation.y+brushPositionDelta,brushLocation.z);
-	}else if(keyCode == 34){//pos y-
+	}else if(keyCode == 78){//pos y-
 		brushLocation.set(brushLocation.x,brushLocation.y-brushPositionDelta,brushLocation.z);
 	}else if(keyCode == 49){
 		brushMaterial = MATERIAL_AIR;

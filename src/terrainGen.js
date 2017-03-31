@@ -22,7 +22,7 @@ var HOMOGENOUSLEAF = 0;
 var LEAF = 1;
 var INTERIOR = 2;
 
-//Inheritance
+/* Basic javascript inheritance */
 function extend(base, sub) {
 
   var origProto = sub.prototype;
@@ -36,13 +36,13 @@ function extend(base, sub) {
   });
 }
 
-
+/* Prints a vector */
 function printV(v){
 	console.log(v.x+", "+v.y+", "+v.z);
 }
 
 
-//Matrices etc for solving qef
+/* Linear Algebra structures and operations for solving qef */
 function fnorm(m){
 	var a = m;
 
@@ -203,6 +203,7 @@ function rotate12(vtav, v){
 	givensRot12(v,co.c,co.s);
 }
 
+/* Single value decomposition */
 function getSymmetricSvd(a, vtav, v, tol, max_sweeps){
 	vtav.copySymmetric(a);
 	v.set(1,0,0,
@@ -276,6 +277,7 @@ function solveLeaseSquares(a, b, x, svd_tol, svd_sweeps, pinv_tol){
 	return solveSymmetric(ata, atb, x, svd_tol, svd_sweeps, pinv_tol);
 }
 
+/* Symmetric 3x3 Matrix */
 SMat3 = function(){
 	this.setSymmetric(0,0,0,0,0,0);
 };
@@ -293,6 +295,7 @@ SMat3.prototype.setSymmetric = function(m00,m01,m02,m11,m12,m22){
 	this.m22 = m22;
 };
 
+/* 3x3 Matrix */
 Mat3 = function(){
 	this.set(0,0,0,0,0,0,0,0,0);
 };
@@ -317,8 +320,8 @@ Mat3.prototype.setSymmetric = function(a00,a01,a02,a11,a12,a22){
 	this.set(a00, a01, a02, a01, a11, a12, a02, a12, a22);
 };
 
-//Quadratic error function for calculating vertex positions and determining if nodes can be collapsed
-
+/* Quadratic error function */
+/* calculates vertex positions and determines if nodes can be collapsed */
 QEF = function(){
 	this.reset();
 };
@@ -448,7 +451,7 @@ QEF.prototype.reset = function(){
 };
 
 
-//Data needed for heterogenous nodes (the only nodes that are actually drawn)
+/* Data needed for heterogenous nodes (the only nodes that are actually drawn) */
 NodeDrawInfo = function(){
 	this.index = -1;
 	this.corners = [0,0,0,0,0,0,0,0];
@@ -459,7 +462,7 @@ NodeDrawInfo = function(){
 	this.qef = new QEF();
 };
 
-//Octree data structure
+/* Octree data structure */
 OctreeNode = function(){
 	this.type = -1; //Types are None, Interior, HomogenousLeaf, Leaf
 	this.min = new THREE.Vector3(0,0,0); //The position of the cube corner with the smallest x,y,z values
@@ -468,6 +471,7 @@ OctreeNode = function(){
 	this.children = []; //8 children in an octree
 };
 
+/* Expand a leaf into 4 leaves */
 OctreeNode.prototype.expandLeaf = function(){
 }
 
@@ -1019,6 +1023,7 @@ Chunk.prototype.contourEdgeProc =function(node, dir){
 };
 
 var processEdgeMask = [[3,2,1,0],[7,5,6,4],[11,10,9,8]];
+
 //Actually connect 4 vertices to make a quad
 Chunk.prototype.contourProcessEdge = function(node, dir){
 	var minSize = 1000000;
@@ -2110,9 +2115,6 @@ perlinCavesDensityFn.prototype.getSurfaceNormal = function(v){
 }
 
 extend(densityFunction, perlinCavesDensityFn);
-
-
-
 
 
 
