@@ -44,7 +44,7 @@ Avaiable points:
 
 ## Usage:
 
-Open index.html in some browser [or just go here](https://lane-s.github.io/HW5/)
+[Try it here](https://lane-s.github.io/HW5/)
 
 A 64x64x64 chunk of terrain will be generated
 
