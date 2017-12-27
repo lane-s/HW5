@@ -217,7 +217,7 @@ var useWireframe = false;
 function onKeyDown(event){
 	var keyCode = event.which;
 
-	if(keyCode == 79){//Radius/Y increase
+	if(keyCode == 79){//Radius/Y increase O
 		if(brushShape === "sphere"){
 			sphereBrushRadius += brushSizeDelta;
 			sphereBrush.scale.set(sphereBrushRadius,sphereBrushRadius,sphereBrushRadius);
@@ -226,7 +226,7 @@ function onKeyDown(event){
 			cubeBrush.scale.set(cubeBrushDim.x,cubeBrushDim.y,cubeBrushDim.z);
 		}
 
-	}else if(keyCode == 76){//Radius/Y decrease
+	}else if(keyCode == 76){//Radius/Y decrease L
 		if(brushShape === "sphere"){
 			sphereBrushRadius -= brushSizeDelta;
 			if(sphereBrushRadius < 1){
